@@ -69,7 +69,7 @@ public class Player {
     private final int FUMBLETOUCHDOWNS = 14;
 
     // values for each players, taken form the roster_stats database.
-    ArrayList< ArrayList >playerStatistics;
+    ArrayList<ArrayList<String>>playerStatistics;
 
     /**
      * Default constructor
@@ -242,10 +242,10 @@ public class Player {
         this.college = college;
     }
 
-    public ArrayList< ArrayList > getPlayerStatistics() {
+    public ArrayList< ArrayList<String> > getPlayerStatistics() {
         return playerStatistics;
     }
-    public void setPlayerStatistics(ArrayList<ArrayList> playerStatistics) {
+    public void setPlayerStatistics(ArrayList<ArrayList<String>> playerStatistics) {
         this.playerStatistics = playerStatistics;
     }
 
