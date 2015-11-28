@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(getApplicationContext(), TrendingInTwitterActivity.class);
         startActivity(intent);
     }
+
+    public void onSearchClicked(View view){
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(intent);
+    }
 }
 
 
