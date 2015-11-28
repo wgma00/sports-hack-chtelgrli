@@ -11,6 +11,14 @@ public class Game {
     private final int INT_INDETERMINANT = -1;
     private final String STRING_INDETERMINANT = "";
 
+    // constants for each columb in the game excel file
+    private final int GAMEID = 0;
+    private final int SKEDID = 1;
+    private final int WEEKNAME = 2;
+    private final int WEEKSHORT = 4;
+    private final int WEEKID = 5;
+    private final int GAMENUMBER = 6;
+
     private int gameId;
     private int skedId;
     private int weekName;
