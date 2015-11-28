@@ -5,7 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity{
+
+    public static List<Player> listOfMyContactObjects = new ArrayList<Player>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

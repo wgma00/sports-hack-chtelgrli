@@ -1,38 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/main_activity"
+    android:background="@drawable/background">
 
 
 
+
+    <!--<EditText-->
+
+        <!--android:inputType="textEmailAddress"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:ems="20"-->
+        <!--android:hint="search a player"-->
+        <!--android:id="@+id/email"-->
+        <!--android:layout_below="@+id/textView4"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:clickable="true"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="25dp" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Twitter"-->
+        <!--android:id="@+id/button"-->
+        <!--android:clickable="true"-->
+        <!--android:onClick="openTrendingInTwitterActivity"-->
+        <!--android:layout_gravity="center_horizontal" />-->
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <!--android:layout_width="90dp"-->
+        <!--android:layout_height="90dp"-->
+        <!--android:id="@+id/img"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:src="@drawable/pinned_players_icon"-->
+        <!--android:layout_below="@+id/editText"-->
+        <!--android:layout_alignStart="@+id/imageView" />-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:background="@drawable/gray_football"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:background="@drawable/football_on_field"-->
+        <!--android:scaleType="centerCrop"/>-->
 
     <EditText
-
-        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_margin="10dp"
-        android:ems="20"
-        android:hint="search a player"
-        android:id="@+id/email"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp" />
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Twitter"
-        android:id="@+id/button"
+        android:textColor="@color/black"
+        android:hint="Search..."
+        android:fontFamily="sans-serif"
+        android:ems="10"
+        android:id="@+id/search_box"
         android:clickable="true"
-        android:onClick="openTrendingInTwitterActivity"
         android:layout_gravity="center_horizontal" />
 
 
-</LinearLayout>
+</RelativeLayout>

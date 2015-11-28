@@ -1,1 +1,1 @@
-include ':app', ':twitter4j-core-4.0.3'
+include ':twitter4j-core-4.0.3', ':app'
