@@ -1,3 +1,5 @@
+package com.fantasybuddy.user.fuudi;
+
 import java.util.ArrayList;
 
 /**
