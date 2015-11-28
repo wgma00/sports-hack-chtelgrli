@@ -36,7 +36,7 @@ public class PlayerTextFileHandler {
         }   catch(Exception e){System.out.println("File error");}
 
         while(currentRow != null){ //loops through rows
-            st = new StringTokenizer(currentRow, "\\t");
+            st = new StringTokenizer(currentRow, "\t");
             playerData = new ArrayList<Object>();
 
             while(st.hasMoreElements()) { //adds each column
@@ -65,7 +65,7 @@ public class PlayerTextFileHandler {
         }   catch(Exception e){System.out.println("File error");}
 
         while(currentRow != null){
-            st = new StringTokenizer(currentRow, "\\t");
+            st = new StringTokenizer(currentRow, "\t");
             ArrayList<Object> currentData = new ArrayList<Object>(); //list of current data on row
 
             while(st.hasMoreElements()){
