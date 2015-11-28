@@ -8,4 +8,6 @@
     <string name="title_activity_trending_in_twitter">TrendingInTwitter</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_pinned_players">PinnedPlayersActivity</string>
+    <string name="title_activity_cool_trends">CoolTrendsActivity</string>
 </resources>
