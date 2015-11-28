@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.shamanland:fab:0.0.3'
-    compile files('C:/Users/Brian/Documents/sports-hack-fuudi/Fuudi/libs/twitter4j-core-4.0.3.jar')
+    compile project(':twitter4j-core-4.0.3')
 }
