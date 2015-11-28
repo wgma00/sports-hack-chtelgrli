@@ -14,7 +14,7 @@ public class TextFileHandler {
     private List<Player> information = new ArrayList<Player>();
 
     public TextFileHandler(Context cxt){
-         
+
 
     }
 
