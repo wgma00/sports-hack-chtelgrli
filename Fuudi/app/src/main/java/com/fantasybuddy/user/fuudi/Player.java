@@ -1,3 +1,4 @@
+package com.fantasybuddy.user.fuudi;
 import java.util.ArrayList;
 
 /**
@@ -6,6 +7,28 @@ import java.util.ArrayList;
  * Date: 11/27/2015
  */
 public class Player {
+
+    // Constants for each columb in the cfl_roster excel file
+    public final int ID = 0;
+    public final int STATSINCREASEID = 1;
+    public final int TEAMID = 2;
+    public final int PLAYERSTAT = 3;
+    public final int FIRSTNAME = 4;
+    public final int LASTNAME = 5;
+    public final int NUMBER = 6;
+    public final int POSITION = 7;
+    public final int IMPORTSTATUS = 8;
+    public final int HEIGHT = 9;
+    public final int WEIGHT = 10;
+    public final int BIRTHDATE = 11;
+    public final int BIRTHPLACE = 12;
+    public final int COLLEGE = 13;
+    public final int YRSTEAM = 14;
+    public final int YRSLEAGUE = 15;
+    public final int ROSTERSTATUS = 16;
+    public final int CREATEDATE = 17;
+
+    // constant values for each
 
     private int id;
     private int statsIncId;
@@ -16,7 +39,7 @@ public class Player {
     private int importStatus;
     private int weight;
     private int yrsLeague;
-    private int yrsteam;
+    private int yrsTeam;
     private int rosStatus;
     private double height;
 
@@ -32,23 +55,24 @@ public class Player {
      * Default constructor
      */
     public Player(){
+        // default values for each element
         this.setId(-1);
         this.setStatsIncId(-1);
         this.setPlayerStat(-1);
-        this.setNumber(-1);
+        this.setFirstName("");
+        this.setLastName("");
         this.setNumber(-1);
         this.setPosition(-1);
         this.setImportStatus(-1);
         this.setHeight(-1);
         this.setWeight(-1);
-        this.setYrsLeague(-1);
-        this.setRosStatus(-1);
-        this.setFirstName("");
-        this.setLastName("");
         this.setBirthDate("");
         this.setBirthPlace("");
         this.setCollege("");
-        this.setYrsteam(-1);
+        this.setYrsTeam(-1);
+        this.setYrsLeague(-1);
+        this.setRosStatus(-1);
+        this.setCreatedAt("");
     }
 
     /**
@@ -57,24 +81,24 @@ public class Player {
      * @param data
      */
     public Player(ArrayList data){
-        this.setId((Integer)data.get(0));
-        this.setStatsIncId((Integer) data.get(1));
-        this.setTeamId((Integer) data.get(2));
-        this.setPlayerStat((Integer)data.get(3));
-        this.setFirstName((String) data.get(4));
-        this.setLastName((String) data.get(5));
-        this.setNumber((Integer) data.get(6));
-        this.setPosition((Integer) data.get(7));
-        this.setImportStatus((Integer) data.get(8));
-        this.setHeight((Double) data.get(9));
-        this.setWeight((Integer) data.get(10));
-        this.setBirthDate((String) data.get(11));
-        this.setBirthPlace((String) data.get(12));
-        this.setCollege((String) data.get(13));
-        this.setYrsteam((Integer) data.get(14));
-        this.setYrsLeague((Integer) data.get(15));
-        this.setRosStatus((Integer) data.get(16));
-        this.setCreatedAt((String) data.get(17));
+        this.setId((Integer)data.get(ID));
+        this.setStatsIncId((Integer) data.get(STATSINCREASEID));
+        this.setTeamId((Integer) data.get(TEAMID));
+        this.setPlayerStat((Integer)data.get(PLAYERSTAT));
+        this.setFirstName((String) data.get(FIRSTNAME));
+        this.setLastName((String) data.get(LASTNAME));
+        this.setNumber((Integer) data.get(NUMBER));
+        this.setPosition((Integer) data.get(POSITION));
+        this.setImportStatus((Integer) data.get(IMPORTSTATUS));
+        this.setHeight((Double) data.get(HEIGHT));
+        this.setWeight((Integer) data.get(WEIGHT));
+        this.setBirthDate((String) data.get(BIRTHDATE));
+        this.setBirthPlace((String) data.get(BIRTHPLACE));
+        this.setCollege((String) data.get(COLLEGE));
+        this.setYrsTeam((Integer) data.get(YRSTEAM));
+        this.setYrsLeague((Integer) data.get(YRSLEAGUE));
+        this.setRosStatus((Integer) data.get(ROSTERSTATUS));
+        this.setCreatedAt((String) data.get(CREATEDATE));
     }
 
     public int getId() {
@@ -148,11 +172,11 @@ public class Player {
         this.yrsLeague = yrsLeague;
     }
 
-    public int getYrsteam() {
-        return yrsteam;
+    public int getYrsTeam() {
+        return yrsTeam;
     }
-    public void setYrsteam(int yrsteam) {
-        this.yrsteam = yrsteam;
+    public void setYrsTeam(int yrsteam) {
+        this.yrsTeam = yrsteam;
     }
 
     public int getRosStatus() {
@@ -216,7 +240,7 @@ public class Player {
                 ", importStatus=" + importStatus +
                 ", weight=" + weight +
                 ", yrsLeague=" + yrsLeague +
-                ", yrsteam=" + yrsteam +
+                ", yrsTeam=" + yrsTeam +
                 ", rosStatus=" + rosStatus +
                 ", height=" + height +
                 ", firstName='" + firstName + '\'' +
