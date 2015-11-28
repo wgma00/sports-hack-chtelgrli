@@ -26,7 +26,7 @@ public class GameTextFileHandler {
         } catch(Exception e){System.out.println("File Error");}
 
         while (currentrow != null){
-            st = new StringTokenizer(currentrow);
+            st = new StringTokenizer(currentrow, "\t");
             ArrayList<Object> datarow = new ArrayList<Object>();
 
             while(st.hasMoreElements()){
