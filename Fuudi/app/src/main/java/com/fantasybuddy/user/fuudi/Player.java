@@ -99,7 +99,7 @@ public class Player {
      *  REQ: data has 18 elements
      * @param data
      */
-    public Player(ArrayList<String> playerData, ArrayList<ArrayList> playerStatistics){
+    public Player(ArrayList<String> playerData, ArrayList<ArrayList<String>> playerStatistics){
         // this is the data that is from the roster database
         this.setId(playerData.get(ID));
         this.setStatsIncId(playerData.get(STATSINCREASEID));
