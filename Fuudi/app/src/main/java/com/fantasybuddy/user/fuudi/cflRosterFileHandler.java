@@ -8,19 +8,17 @@ import android.content.*;
 /**
  * Created by William G on 11/28/2015.
  */
-public class TextFileHandler {
+public class cflRosterFileHandler {
 
-    private final int PLAYER_INFORMATION = 18;
     private List<Player> information = new ArrayList<Player>();
 
-    public TextFileHandler(Context cxt){
-
-
+    public cflRosterFileHandler(Context cxt){
+        this.information = openPlayerStatsFile(cxt,"database_files\\cfl_roster_stats-csv.tsv");
     }
 
-    public List<Player> openPlayerInformation(Context cxt, String file){
+    public List<Player> openPlayerStatsFile(Context cxt, String file){
            try{
-               // prelimanary stuff for opening a text file.
+               // preliminary stuff for opening a text file.
                // need access to the context of the database class so that we can upload
                // stuff there etc.
                InputStream is = cxt.getAssets().open(file);

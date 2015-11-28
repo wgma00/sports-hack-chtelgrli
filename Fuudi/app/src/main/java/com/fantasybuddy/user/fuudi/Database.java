@@ -8,13 +8,13 @@ import java.util.Hashtable;
 
 public class Database {
 
-    Hashtable<String, Player>database;
-    TextFileHandler fileInput;
+    Hashtable<String, Player>playerStatsDatabase;
+    cflRosterFileHandler fileInput;
     Context context;
 
     public Database(Context context){
         this.context = context;
-        fileInput = new TextFileHandler(context);
+        fileInput = new cflRosterFileHandler(context);
     }
 
     /** Inserts the player object into the database
@@ -22,7 +22,7 @@ public class Database {
      * */
     public void insertPlayer(Player player){
         String key = player.getFirstName() + " " + player.getLastName();
-        database.put(key,player);
+        playerStatsDatabase.put(key,player);
     }
 
     /**Returns the respective player object within the database hashatable.
@@ -30,8 +30,8 @@ public class Database {
      * @return player to be queried
      */
     public Player query(String playerName){
-        if(database.containsKey(playerName))
-            return database.get(playerName);
+        if(playerStatsDatabase.containsKey(playerName))
+            return playerStatsDatabase.get(playerName);
         else
             return null;
     }
