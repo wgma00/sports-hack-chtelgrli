@@ -1,7 +1,7 @@
 package com.fantasybuddy.user.fuudi;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 
 /**
  * Author: William Granados
@@ -12,7 +12,6 @@ public class Player {
 
 
     // inderminate values, meaning nothing was added
-    private final int INT_INDETERMINATE = -1;
     private final String STRING_INDETERMINATE = "";
 
     // Constants for each columb in the cfl_roster excel file
@@ -35,18 +34,18 @@ public class Player {
     private final int ROSTERSTATUS = 16;
 
     // values for each player, taken from the roster database
-    private int id;
-    private int statsIncId;
-    private int teamId;
-    private int playerStat;
-    private int number;
-    private int position;
-    private int importStatus;
-    private int weight;
-    private int yrsLeague;
-    private int yrsTeam;
-    private int rosStatus;
-    private double height;
+    private String id;
+    private String statsIncId;
+    private String teamId;
+    private String playerStat;
+    private String number;
+    private String position;
+    private String importStatus;
+    private String weight;
+    private String yrsLeague;
+    private String yrsTeam;
+    private String rosStatus;
+    private String height;
     private String firstName;
     private String lastName;
     private String birthDate;
@@ -71,7 +70,7 @@ public class Player {
     private final int FUMBLETOUCHDOWNS = 14;
 
     // values for each players, taken form the roster_stats database.
-    ArrayList< ArrayList >playerStatistics;
+    private ArrayList< ArrayList <String>>playerStatistics;
 
     public Player(String firstName, String lastName) {
         this.firstName = firstName;
@@ -83,23 +82,23 @@ public class Player {
      */
     public Player(){
         // default values for each element
-        this.setId(INT_INDETERMINATE);
-        this.setStatsIncId(INT_INDETERMINATE);
-        this.setPlayerStat(INT_INDETERMINATE);
+        this.setId(STRING_INDETERMINATE);
+        this.setStatsIncId(STRING_INDETERMINATE);
+        this.setPlayerStat(STRING_INDETERMINATE);
         this.setFirstName(STRING_INDETERMINATE);
         this.setLastName(STRING_INDETERMINATE);
-        this.setNumber(INT_INDETERMINATE);
-        this.setPosition(INT_INDETERMINATE);
-        this.setImportStatus(INT_INDETERMINATE);
-        this.setHeight(INT_INDETERMINATE);
-        this.setWeight(INT_INDETERMINATE);
+        this.setNumber(STRING_INDETERMINATE);
+        this.setPosition(STRING_INDETERMINATE);
+        this.setImportStatus(STRING_INDETERMINATE);
+        this.setHeight(STRING_INDETERMINATE);
+        this.setWeight(STRING_INDETERMINATE);
         this.setBirthDate(STRING_INDETERMINATE);
         this.setBirthPlace(STRING_INDETERMINATE);
         this.setCollege(STRING_INDETERMINATE);
-        this.setYrsTeam(INT_INDETERMINATE);
-        this.setYrsLeague(INT_INDETERMINATE);
 
-        this.setRosStatus(INT_INDETERMINATE);
+        this.setYrsTeam(STRING_INDETERMINATE);
+        this.setYrsLeague(STRING_INDETERMINATE);
+        this.setRosStatus(STRING_INDETERMINATE);
     }
 
     /**
@@ -107,111 +106,111 @@ public class Player {
      *  REQ: data has 18 elements
      * @param data
      */
-    public Player(ArrayList playerData, ArrayList<ArrayList> playerStatistics){
+    public Player(ArrayList<String> playerData, ArrayList<ArrayList<String>> playerStatistics){
         // this is the data that is from the roster database
-        this.setId(Integer.parseInt((String) playerData.get(ID)));
-        this.setStatsIncId(Integer.parseInt((String) playerData.get(STATSINCREASEID)));
-        this.setTeamId(Integer.parseInt((String) playerData.get(TEAMID)));
-        this.setPlayerStat(Integer.parseInt((String) playerData.get(PLAYERSTAT)));
-        this.setFirstName((String) playerData.get(FIRSTNAME));
-        this.setLastName((String) playerData.get(LASTNAME));
-        this.setNumber(Integer.parseInt((String)playerData.get(NUMBER)));
-        this.setPosition(Integer.parseInt((String)playerData.get(POSITION)));
-        this.setImportStatus(Integer.parseInt((String)playerData.get(IMPORTSTATUS)));
-        this.setHeight(Double.parseDouble((String) playerData.get(HEIGHT)));
-        this.setWeight(Integer.parseInt((String)playerData.get(WEIGHT)));
-        this.setBirthDate((String) playerData.get(BIRTHDATE));
-        this.setBirthPlace((String) playerData.get(BIRTHPLACE));
-        this.setCollege((String) playerData.get(COLLEGE));
-        this.setYrsTeam(Integer.parseInt((String)playerData.get(YRSTEAM)));
-        this.setYrsLeague(Integer.parseInt((String)playerData.get(YRSLEAGUE)));
-        this.setRosStatus(Integer.parseInt((String)playerData.get(ROSTERSTATUS)));
+        this.setId(playerData.get(ID));
+        this.setStatsIncId(playerData.get(STATSINCREASEID));
+        this.setTeamId(playerData.get(TEAMID));
+        this.setPlayerStat(playerData.get(PLAYERSTAT));
+        this.setFirstName(playerData.get(FIRSTNAME));
+        this.setLastName(playerData.get(LASTNAME));
+        this.setNumber(playerData.get(NUMBER));
+        this.setPosition(playerData.get(POSITION));
+        this.setImportStatus(playerData.get(IMPORTSTATUS));
+        this.setHeight(playerData.get(HEIGHT));
+        this.setWeight(playerData.get(WEIGHT));
+        this.setBirthDate(playerData.get(BIRTHDATE));
+        this.setBirthPlace(playerData.get(BIRTHPLACE));
+        this.setCollege(playerData.get(COLLEGE));
+        this.setYrsTeam(playerData.get(YRSTEAM));
+        this.setYrsLeague(playerData.get(YRSLEAGUE));
+        this.setRosStatus(playerData.get(ROSTERSTATUS));
         // this is the data that is from the rster stats database
         this.setPlayerStatistics(playerStatistics);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getStatsIncId() {
+    public String getStatsIncId() {
         return statsIncId;
     }
-    public void setStatsIncId(int statsIncId) {
+    public void setStatsIncId(String statsIncId) {
         this.statsIncId = statsIncId;
     }
 
-    public int getTeamId() {
+    public String getTeamId() {
         return teamId;
     }
-    public void setTeamId(int teamId) {
+    public void setTeamId(String teamId) {
         this.teamId = teamId;
     }
 
-    public int getPlayerStat() {
+    public String getPlayerStat() {
         return playerStat;
     }
-    public void setPlayerStat(int playerStat) {
+    public void setPlayerStat(String playerStat) {
         this.playerStat = playerStat;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public int getPosition() {
+    public String getPosition() {
         return position;
     }
-    public void setPosition(int position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
-    public int getImportStatus() {
+    public String getImportStatus() {
         return importStatus;
     }
-    public void setImportStatus(int importStatus) {
+    public void setImportStatus(String importStatus) {
         this.importStatus = importStatus;
     }
 
-    public double getHeight() {
+    public String getHeight() {
         return height;
     }
-    public void setHeight(double height) {
-        this.height = height;
+    public void setHeight(String sTRING_INDETERMINATE2) {
+        this.height = sTRING_INDETERMINATE2;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public int getYrsLeague() {
+    public String getYrsLeague() {
         return yrsLeague;
     }
-    public void setYrsLeague(int yrsLeague) {
+    public void setYrsLeague(String yrsLeague) {
         this.yrsLeague = yrsLeague;
     }
 
-    public int getYrsTeam() {
+    public String getYrsTeam() {
         return yrsTeam;
     }
-    public void setYrsTeam(int yrsteam) {
+    public void setYrsTeam(String yrsteam) {
         this.yrsTeam = yrsteam;
     }
 
-    public int getRosStatus() {
+    public String getRosStatus() {
         return rosStatus;
     }
-    public void setRosStatus(int rosStatus) {
+    public void setRosStatus(String rosStatus) {
         this.rosStatus = rosStatus;
     }
 
@@ -250,15 +249,15 @@ public class Player {
         this.college = college;
     }
 
-    public ArrayList< ArrayList > getPlayerStatistics() {
-        return playerStatistics;
+    public ArrayList< ArrayList <String>> getPlayerStatistics() {
+        return this.playerStatistics;
     }
-    public void setPlayerStatistics(ArrayList<ArrayList> playerStatistics) {
+    public void setPlayerStatistics(ArrayList<ArrayList<String>> playerStatistics) {
         this.playerStatistics = playerStatistics;
     }
 
-    public int getINT_INDETERMINATE() {
-        return INT_INDETERMINATE;
+    public String getString_INDETERMINATE() {
+        return STRING_INDETERMINATE;
     }
     public String getSTRING_INDETERMINATE() {
         return STRING_INDETERMINATE;
@@ -267,25 +266,6 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "INT_INDETERMINATE=" + INT_INDETERMINATE +
-                ", STRING_INDETERMINATE='" + STRING_INDETERMINATE + '\'' +
-                ", ID=" + ID +
-                ", STATSINCREASEID=" + STATSINCREASEID +
-                ", TEAMID=" + TEAMID +
-                ", PLAYERSTAT=" + PLAYERSTAT +
-                ", FIRSTNAME=" + FIRSTNAME +
-                ", LASTNAME=" + LASTNAME +
-                ", NUMBER=" + NUMBER +
-                ", POSITION=" + POSITION +
-                ", IMPORTSTATUS=" + IMPORTSTATUS +
-                ", HEIGHT=" + HEIGHT +
-                ", WEIGHT=" + WEIGHT +
-                ", BIRTHDATE=" + BIRTHDATE +
-                ", BIRTHPLACE=" + BIRTHPLACE +
-                ", COLLEGE=" + COLLEGE +
-                ", YRSTEAM=" + YRSTEAM +
-                ", YRSLEAGUE=" + YRSLEAGUE +
-                ", ROSTERSTATUS=" + ROSTERSTATUS +
                 ", id=" + id +
                 ", statsIncId=" + statsIncId +
                 ", teamId=" + teamId +
@@ -303,21 +283,6 @@ public class Player {
                 ", birthDate='" + birthDate + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", college='" + college + '\'' +
-                ", ROSTERID=" + ROSTERID +
-                ", SEASON=" + SEASON +
-                ", SEASONTYPE=" + SEASONTYPE +
-                ", GAMES=" + GAMES +
-                ", TOUCHDOWNS=" + TOUCHDOWNS +
-                ", POINTS=" + POINTS +
-                ", TWOPOINTPOINTS=" + TWOPOINTPOINTS +
-                ", TOTALSINGLES=" + TOTALSINGLES +
-                ", PUNTSINGLES=" + PUNTSINGLES +
-                ", FIELDGOALSINGLES=" + FIELDGOALSINGLES +
-                ", KICKOFFSINGLES=" + KICKOFFSINGLES +
-                ", FUMBLES=" + FUMBLES +
-                ", FUMBLESLOST=" + FUMBLESLOST +
-                ", FUMBLESRETURNYARDS=" + FUMBLESRETURNYARDS +
-                ", FUMBLETOUCHDOWNS=" + FUMBLETOUCHDOWNS +
                 ", playerStatistics=" + playerStatistics +
                 '}';
     }
