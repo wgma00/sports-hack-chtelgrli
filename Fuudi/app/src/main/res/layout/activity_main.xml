@@ -37,7 +37,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="false"
                     android:layout_margin="10dp"
-                    android:src="@drawable/anthonyAllen" />
+                    android:src="@drawable/anthony_allen" />
 
 
 
@@ -69,7 +69,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/blakeSims"
+                    android:src="@drawable/blake_sims"
                     android:id="@+id/message_image2"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="false"
@@ -105,7 +105,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/brendonLabatte"
+                    android:src="@drawable/brendon_labatte"
                     android:id="@+id/message_image3"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="false"
