@@ -102,24 +102,24 @@ public class Player {
      * @param data
      */
     public Player(ArrayList playerData, ArrayList<ArrayList> playerStatistics){
-        // this is the data that is from the roster stabase
-        this.setId((Integer) playerData.get(ID));
-        this.setStatsIncId((Integer) playerData.get(STATSINCREASEID));
-        this.setTeamId((Integer) playerData.get(TEAMID));
-        this.setPlayerStat((Integer) playerData.get(PLAYERSTAT));
+        // this is the data that is from the roster database
+        this.setId(Integer.parseInt((String) playerData.get(ID)));
+        this.setStatsIncId(Integer.parseInt((String) playerData.get(STATSINCREASEID)));
+        this.setTeamId(Integer.parseInt((String) playerData.get(TEAMID)));
+        this.setPlayerStat(Integer.parseInt((String) playerData.get(PLAYERSTAT)));
         this.setFirstName((String) playerData.get(FIRSTNAME));
         this.setLastName((String) playerData.get(LASTNAME));
-        this.setNumber((Integer) playerData.get(NUMBER));
-        this.setPosition((Integer) playerData.get(POSITION));
-        this.setImportStatus((Integer) playerData.get(IMPORTSTATUS));
-        this.setHeight((Double) playerData.get(HEIGHT));
-        this.setWeight((Integer) playerData.get(WEIGHT));
+        this.setNumber(Integer.parseInt((String)playerData.get(NUMBER)));
+        this.setPosition(Integer.parseInt((String)playerData.get(POSITION)));
+        this.setImportStatus(Integer.parseInt((String)playerData.get(IMPORTSTATUS)));
+        this.setHeight(Double.parseDouble((String) playerData.get(HEIGHT)));
+        this.setWeight(Integer.parseInt((String)playerData.get(WEIGHT)));
         this.setBirthDate((String) playerData.get(BIRTHDATE));
         this.setBirthPlace((String) playerData.get(BIRTHPLACE));
         this.setCollege((String) playerData.get(COLLEGE));
-        this.setYrsTeam((Integer) playerData.get(YRSTEAM));
-        this.setYrsLeague((Integer) playerData.get(YRSLEAGUE));
-        this.setRosStatus((Integer) playerData.get(ROSTERSTATUS));
+        this.setYrsTeam(Integer.parseInt((String)playerData.get(YRSTEAM)));
+        this.setYrsLeague(Integer.parseInt((String)playerData.get(YRSLEAGUE)));
+        this.setRosStatus(Integer.parseInt((String)playerData.get(ROSTERSTATUS)));
         // this is the data that is from the rster stats database
         this.setPlayerStatistics(playerStatistics);
     }
