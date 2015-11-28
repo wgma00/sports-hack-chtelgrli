@@ -10,11 +10,18 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
-    public static List<Player> listOfMyContactObjects = new ArrayList<Player>();
+    public static List<Player> listOfMyPlayers = new ArrayList<Player>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        listOfMyPlayers.add(new Player("Adit", "Patel"));
+        listOfMyPlayers.add(new Player("Adit1", "Patel"));
+        listOfMyPlayers.add(new Player("Adit2", "Patel"));
+        listOfMyPlayers.add(new Player("Adit3", "Patel"));
+        listOfMyPlayers.add(new Player("Adit4", "Patel"));
+        listOfMyPlayers.add(new Player("Adit5", "Patel"));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }

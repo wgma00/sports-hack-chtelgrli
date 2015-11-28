@@ -73,6 +73,11 @@ public class Player {
     // values for each players, taken form the roster_stats database.
     ArrayList< ArrayList >playerStatistics;
 
+    public Player(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     /**
      * Default constructor
      */
@@ -93,6 +98,7 @@ public class Player {
         this.setCollege(STRING_INDETERMINATE);
         this.setYrsTeam(INT_INDETERMINATE);
         this.setYrsLeague(INT_INDETERMINATE);
+
         this.setRosStatus(INT_INDETERMINATE);
     }
 

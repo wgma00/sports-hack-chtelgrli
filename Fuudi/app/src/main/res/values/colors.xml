@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#95a5a6</color>
     <color name="peterRiver">#3498db</color>
     <color name="concrete">#95a5a6</color>
     <color name="nepheritis">#27ae60</color>
@@ -11,7 +11,7 @@
     <color name="silver">#bdc3c7</color>
     <color name="black">#000000</color>
     <color name="footballColor">#2B2926</color>
-
+    <color name="translucent">#70FFFFFF</color>
 
 
 </resources>

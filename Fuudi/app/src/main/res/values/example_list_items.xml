@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sample_list">
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+        <item>Adit</item>
+        <item>Justin</item>
+        <item>Brian</item>
+        <item>William</item>
+
+
+    </string-array>
+    
+    
+</resources>

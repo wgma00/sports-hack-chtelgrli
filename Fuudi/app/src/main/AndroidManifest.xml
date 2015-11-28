@@ -10,7 +10,8 @@
         android:theme="@style/AppTheme.NoActionBar" >
         <activity
             android:name=".MainActivity"
-            android:label="Fuddi" >
+            android:label="Fuddi"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
