@@ -2,6 +2,7 @@ package com.fantasybuddy.user.fuudi;
 
 import java.util.ArrayList;
 
+
 /**
  * Author: William Granados
  * Purpose: This class will hold variables and digbits related to a certain player
@@ -69,7 +70,7 @@ public class Player {
     private final int FUMBLETOUCHDOWNS = 14;
 
     // values for each players, taken form the roster_stats database.
-    ArrayList<ArrayList<String>>playerStatistics;
+    private ArrayList< ArrayList <String>>playerStatistics;
 
     /**
      * Default constructor
@@ -242,8 +243,8 @@ public class Player {
         this.college = college;
     }
 
-    public ArrayList< ArrayList<String> > getPlayerStatistics() {
-        return playerStatistics;
+    public ArrayList< ArrayList <String>> getPlayerStatistics() {
+        return this.playerStatistics;
     }
     public void setPlayerStatistics(ArrayList<ArrayList<String>> playerStatistics) {
         this.playerStatistics = playerStatistics;
@@ -259,25 +260,6 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "String_INDETERMINATE=" + STRING_INDETERMINATE +
-                ", STRING_INDETERMINATE='" + STRING_INDETERMINATE + '\'' +
-                ", ID=" + ID +
-                ", STATSINCREASEID=" + STATSINCREASEID +
-                ", TEAMID=" + TEAMID +
-                ", PLAYERSTAT=" + PLAYERSTAT +
-                ", FIRSTNAME=" + FIRSTNAME +
-                ", LASTNAME=" + LASTNAME +
-                ", NUMBER=" + NUMBER +
-                ", POSITION=" + POSITION +
-                ", IMPORTSTATUS=" + IMPORTSTATUS +
-                ", HEIGHT=" + HEIGHT +
-                ", WEIGHT=" + WEIGHT +
-                ", BIRTHDATE=" + BIRTHDATE +
-                ", BIRTHPLACE=" + BIRTHPLACE +
-                ", COLLEGE=" + COLLEGE +
-                ", YRSTEAM=" + YRSTEAM +
-                ", YRSLEAGUE=" + YRSLEAGUE +
-                ", ROSTERSTATUS=" + ROSTERSTATUS +
                 ", id=" + id +
                 ", statsIncId=" + statsIncId +
                 ", teamId=" + teamId +
@@ -295,21 +277,6 @@ public class Player {
                 ", birthDate='" + birthDate + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", college='" + college + '\'' +
-                ", ROSTERID=" + ROSTERID +
-                ", SEASON=" + SEASON +
-                ", SEASONTYPE=" + SEASONTYPE +
-                ", GAMES=" + GAMES +
-                ", TOUCHDOWNS=" + TOUCHDOWNS +
-                ", POINTS=" + POINTS +
-                ", TWOPOINTPOINTS=" + TWOPOINTPOINTS +
-                ", TOTALSINGLES=" + TOTALSINGLES +
-                ", PUNTSINGLES=" + PUNTSINGLES +
-                ", FIELDGOALSINGLES=" + FIELDGOALSINGLES +
-                ", KICKOFFSINGLES=" + KICKOFFSINGLES +
-                ", FUMBLES=" + FUMBLES +
-                ", FUMBLESLOST=" + FUMBLESLOST +
-                ", FUMBLESRETURNYARDS=" + FUMBLESRETURNYARDS +
-                ", FUMBLETOUCHDOWNS=" + FUMBLETOUCHDOWNS +
                 ", playerStatistics=" + playerStatistics +
                 '}';
     }

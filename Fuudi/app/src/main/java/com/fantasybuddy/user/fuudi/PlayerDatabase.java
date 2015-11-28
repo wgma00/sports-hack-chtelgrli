@@ -10,7 +10,7 @@ import java.util.Hashtable;
 
 public class PlayerDatabase {
 
-    Hashtable<Integer, Player>playerIdDatabase;
+    Hashtable<String, Player>playerIdDatabase;
     Hashtable<String, Player>playerNameDatabase;
 
     ArrayList<Player> playerList;
@@ -19,6 +19,8 @@ public class PlayerDatabase {
 
     public PlayerDatabase(Context context){
         this.context = context;
+        playerIdDatabase = new Hashtable<String, Player>();
+        playerNameDatabase = new Hashtable<String, Player>();
 
         updateDatabases();
     }
@@ -30,14 +32,14 @@ public class PlayerDatabase {
         for(int i = 0; i < playerList.size(); i++){
             Player currentPlayer = playerList.get(i);
             String playerName = currentPlayer.getFirstName() + " " + currentPlayer.getLastName();
-            int playerId = currentPlayer.getId();
+            String playerId = currentPlayer.getId();
 
             playerIdDatabase.put(playerId, currentPlayer);
             playerNameDatabase.put(playerName, currentPlayer);
         }
     }
 
-    public Hashtable<Integer, Player> getPlayerIdDatabase(){
+    public Hashtable<String, Player> getPlayerIdDatabase(){
         return playerIdDatabase;
     }
 

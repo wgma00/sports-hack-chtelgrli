@@ -9,15 +9,10 @@ import android.content.*;
  * Created by William G on 11/28/2015.
  */
 public class PlayerTextFileHandler {
-
-    private ArrayList<String>playerData;
-    private ArrayList<ArrayList<String>>playerStatistics;
-
     private HashMap<String, Player> playerIds;
     private ArrayList<Player> playersList;
 
     public PlayerTextFileHandler(){
-        playerStatistics = new ArrayList<ArrayList<String>>();
         playerIds = new HashMap<String, Player>();
         playersList = new ArrayList<Player>();
 
@@ -41,7 +36,7 @@ public class PlayerTextFileHandler {
         // parse through the file
         while(currentRow != null){ //loops through rows
             st = new StringTokenizer(currentRow, "\t");
-            playerData = new ArrayList<String>();
+            ArrayList<String> playerData = new ArrayList<String>();
 
             while(st.hasMoreElements()) { //adds each column
                 playerData.add((String)st.nextElement());
@@ -53,12 +48,15 @@ public class PlayerTextFileHandler {
                 System.out.println("File error 2");
             }
 
-            Player currentPlayer = new Player(playerData, playerStatistics); //PlayerStatistics not set yet
+            Player currentPlayer = new Player(playerData, new ArrayList<ArrayList<String>>());
             playersList.add(currentPlayer);
 
-            String id = (String)playerData.get(0); //ids refer to Player object
+            String id = playerData.get(0); //ids refer to Player object
             playerIds.put(id, currentPlayer);
+
         }
+        System.out.println(playerIds.get("1"));
+
     }
 
     private void updatePlayerStatistics(){
@@ -83,9 +81,14 @@ public class PlayerTextFileHandler {
                 currentRow = tsvFile.readLine();
             }catch(Exception e){System.out.println("File Error 4");}
 
+
+            playerIds.get(currentData.get(0)).getPlayerStatistics().add(currentData);
             //gets player by id & adds the stats row to his list of stats
-            ArrayList<ArrayList> currentPlayerStats = playerIds.get(currentData.get(0)).getPlayerStatistics();
-            currentPlayerStats.add(currentData);
+            Player currentPlayer = playerIds.get(currentData.get(0));
+            ArrayList<ArrayList<String>> playerStats = currentPlayer.getPlayerStatistics();
+
+            playerStats.add(currentData);
+            currentPlayer.setPlayerStatistics(playerStats);
         }
     }
 
