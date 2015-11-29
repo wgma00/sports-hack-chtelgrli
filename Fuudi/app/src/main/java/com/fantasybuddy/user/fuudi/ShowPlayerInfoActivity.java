@@ -19,7 +19,7 @@ import java.util.Hashtable;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShowPlayerInfoActivity extends AppCompatActivity {
-
+    public static TwitterUpdates TWITTER = new TwitterUpdates();
     String playerNameExtra;
     ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
@@ -47,7 +47,8 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
 
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
-        results = new TwitterUpdates().returnTweets(playerName);
+
+        results = TWITTER.returnTweets(playerName);
         StrictMode.enableDefaults();
 
         for(int i = 0; i < results.size(); i++){
