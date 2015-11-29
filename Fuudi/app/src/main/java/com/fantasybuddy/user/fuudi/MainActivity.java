@@ -35,6 +35,12 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
         startActivity(intent);
     }
+
+    public void onPlayerPressed(View view){
+        Intent intent = new Intent(getApplicationContext(), ShowPlayerInfoActivity.class);
+        startActivity(intent);
+    }
+
 }
 
 

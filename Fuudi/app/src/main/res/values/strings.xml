@@ -11,4 +11,5 @@
     <string name="title_activity_pinned_players">PinnedPlayersActivity</string>
     <string name="title_activity_cool_trends">CoolTrendsActivity</string>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_show_player_info">ShowPlayerInfoActivity</string>
 </resources>
