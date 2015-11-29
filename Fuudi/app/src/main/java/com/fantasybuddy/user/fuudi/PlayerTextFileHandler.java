@@ -11,23 +11,28 @@ import android.content.*;
 public class PlayerTextFileHandler {
     private HashMap<String, Player> playerIds;
     private ArrayList<Player> playersList;
+    Context context;
 
-    public PlayerTextFileHandler(){
+    public PlayerTextFileHandler(Context context){
+
         playerIds = new HashMap<String, Player>();
         playersList = new ArrayList<Player>();
+
+        this.context = context;
 
         updatePlayerData();
         updatePlayerStatistics();
     }
 
     private void updatePlayerData(){
-        BufferedReader tsvFile = null;
+        InputStream is = context.getResources().openRawResource(R.raw.cfl_roster_csv);
+        BufferedReader tsvFile = new BufferedReader(new InputStreamReader(is));
+
         String currentRow = "";
         StringTokenizer st;
 
         // make sure the file is there
         try {
-            tsvFile = new BufferedReader(new FileReader("cfl_roster-csv.tsv"));
             currentRow = tsvFile.readLine();
         }   catch(Exception e){
             System.out.println("File error 1");
@@ -55,17 +60,16 @@ public class PlayerTextFileHandler {
             playerIds.put(id, currentPlayer);
 
         }
-        System.out.println(playerIds.get("1"));
 
     }
 
     private void updatePlayerStatistics(){
-        BufferedReader tsvFile = null;
+        InputStream is = context.getResources().openRawResource(R.raw.cfl_roster_stats_csv);
+        BufferedReader tsvFile = new BufferedReader(new InputStreamReader(is));
         String currentRow = "";
         StringTokenizer st;
 
         try {
-            tsvFile = new BufferedReader(new FileReader("cfl_roster_stats-csv.tsv"));
             currentRow = tsvFile.readLine();
         }   catch(Exception e){System.out.println("File error 3");}
 

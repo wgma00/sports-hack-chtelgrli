@@ -26,7 +26,7 @@ public class PlayerDatabase {
     }
 
     private void updateDatabases(){
-        PlayerTextFileHandler textHandler = new PlayerTextFileHandler();
+        PlayerTextFileHandler textHandler = new PlayerTextFileHandler(context);
         playerList = textHandler.getPlayers();
 
         for(int i = 0; i < playerList.size(); i++){
@@ -45,5 +45,9 @@ public class PlayerDatabase {
 
     public Hashtable<String, Player> getPlayerNameDatabase(){
         return playerNameDatabase;
+    }
+
+    public ArrayList<Player> getPlayerList() {
+        return playerList;
     }
 }
