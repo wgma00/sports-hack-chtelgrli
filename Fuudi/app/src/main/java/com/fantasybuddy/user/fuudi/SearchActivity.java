@@ -19,10 +19,10 @@ public class SearchActivity extends AppCompatActivity {
 
         String query = ""; //REPLACE THIS
 
-        ArrayList<Player> searchResult = searchPlayers(query);
+        ArrayList<Player> searchResult = searchPlayers(query); //Example
     }
 
-    private ArrayList<Player> searchPlayers(String query){
+    public ArrayList<Player> searchPlayers(String query){
         PlayerDatabase pd = new PlayerDatabase(this);
         ArrayList<Player> result = new ArrayList<Player>();
         ArrayList<Player> totalList = pd.getPlayerList(); //List of all players
