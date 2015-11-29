@@ -1,6 +1,7 @@
 package com.fantasybuddy.user.fuudi;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShowPlayerInfoActivity extends AppCompatActivity {
 
@@ -65,6 +68,13 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView positionText = (TextView) findViewById(R.id.position_holder);
         TextView weightText = (TextView) findViewById(R.id.weight_holder);
         TextView heightText = (TextView) findViewById(R.id.height_holder);
+        CircleImageView playerImage = (CircleImageView)findViewById(R.id.player_image);
+
+        String nameForResource = playerNameExtra.toLowerCase().replace(' ', '_');
+
+        int resourceId = getResources().getIdentifier(nameForResource, "drawable", getPackageName());
+
+        playerImage.setImageResource(resourceId);
 
         playerNameBox.setText(playerNameExtra);
         teamText.setText(player.getTeamId());
