@@ -1,5 +1,7 @@
 package com.fantasybuddy.user.fuudi;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,11 +17,21 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
+    public static List<String> listOfMyPlayers = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listOfMyPlayers.add("anthony allen");
+        listOfMyPlayers.add("blake sims");
+        listOfMyPlayers.add("brendon labatte");
+        listOfMyPlayers.add("brett smith");
+        listOfMyPlayers.add("carl fitzgerald");
+
+
+
     }
 
     public void openTrendingInTwitterActivity(View view){
@@ -28,13 +40,16 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void onSearchClicked(View view){
+
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
         EditText searchBar = (EditText) findViewById(R.id.player_search_bar);
         String searchQuery = searchBar.getText().toString().trim();
 
         intent.putExtra("SEARCH_QUERY", searchQuery);
         startActivity(intent);
+
     }
+
     public void onBuyTicketClicked(View view){
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.cfl.ca/single_game_tickets"));
         startActivity(intent);

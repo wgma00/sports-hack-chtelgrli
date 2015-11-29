@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_player_info);
 
+        Button addplayerbutt = (Button) findViewById(R.id.addplayerbutton);
+
 
         Intent startingIntent = getIntent();
         playerNameExtra = startingIntent.getStringExtra("NAME");
@@ -36,6 +39,15 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
 
         Player player = getPlayer(playerNameExtra);
         setInfo(player);
+
+        for(int i = 0; i<MainActivity.listOfMyPlayers.size(); i++){
+            if(MainActivity.listOfMyPlayers.contains(playerNameExtra) == false){
+                addplayerbutt.setVisibility(View.VISIBLE);
+            }
+
+        }
+
+
 
     }
 
@@ -124,5 +136,8 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
     }
 
+    public void onAddPlayerClicked(){
+
+    }
 
 }
