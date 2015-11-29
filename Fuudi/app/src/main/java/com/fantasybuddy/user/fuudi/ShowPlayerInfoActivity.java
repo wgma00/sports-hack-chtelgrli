@@ -9,8 +9,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,7 +57,7 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView playerInfo = (TextView) findViewById(R.id.twitter_stuff);
 
         String playerName = name;
-        Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
 
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
@@ -82,6 +84,7 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView weightText = (TextView) findViewById(R.id.weight_holder);
         TextView heightText = (TextView) findViewById(R.id.height_holder);
         CircleImageView playerImage = (CircleImageView)findViewById(R.id.player_image);
+
 
         String nameForResource = playerNameExtra.toLowerCase().replace(' ', '_');
 
@@ -136,7 +139,14 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public void onAddPlayerClicked(){
+    public void onAddPlayerClicked(View view){
+
+        String key = "NAME";
+
+        CharSequence stringvalue = playerNameExtra;
+        Intent sendStuff = new Intent(this, MainActivity.class);
+        sendStuff.putExtra(key, stringvalue);
+        startActivity(sendStuff);
 
     }
 

@@ -258,6 +258,8 @@
                 android:clickable="true"
                 android:onClick="onPlayerPressed"
                 android:visibility="gone"
+                android:id="@+id/layout6"
+
                 >
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="80dp"
@@ -283,6 +285,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/layout7"
 
                 android:clickable="true"
                 android:onClick="onPlayerPressed"

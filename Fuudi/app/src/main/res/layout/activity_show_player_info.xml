@@ -203,7 +203,7 @@
                 android:textColor="@color/white"
                 android:padding="10dp"
                 android:visibility="gone"
-                android:onClick="onAddPlayerCicked" />
+                android:onClick="onAddPlayerClicked" />
         </LinearLayout>
 
 
