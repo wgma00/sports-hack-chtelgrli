@@ -12,4 +12,5 @@
     <string name="title_activity_cool_trends">CoolTrendsActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_show_player_info">ShowPlayerInfoActivity</string>
+    <string name="title_activity_buy_ticket">BuyTicket</string>
 </resources>

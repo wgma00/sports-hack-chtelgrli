@@ -32,11 +32,11 @@ public class PlayerDatabase {
         for(int i = 0; i < playerList.size(); i++){
             Player currentPlayer = playerList.get(i);
             String playerName = currentPlayer.getFirstName() + " " + currentPlayer.getLastName();
-            playerName = playerName.toLowerCase();
+
             String playerId = currentPlayer.getId();
 
             playerIdDatabase.put(playerId, currentPlayer);
-            playerNameDatabase.put(playerName, currentPlayer);
+            playerNameDatabase.put(playerName.toLowerCase(), currentPlayer);
         }
     }
 

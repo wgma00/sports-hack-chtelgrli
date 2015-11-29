@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
         startActivity(intent);
     }
+    public void onBuyTicketClicked(View view){
+        Intent intent = new Intent(getApplicationContext(), BuyTicket.class);
+        startActivity(intent);
+    }
 
     public void onPlayerPressed(View view){
 //        Intent intent = new Intent(getApplicationContext(), ShowPlayerInfoActivity.class);

@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/main_activity"
-    android:background="@drawable/background">
+    android:background="@drawable/newbg">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -16,26 +16,42 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/toplayout"
-        >
+        android:background="@drawable/listback"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center"
+            android:src="@drawable/base_template_icon"
+            android:layout_marginLeft="10dp" />
 
         <EditText
-            android:layout_width="250dp"
+            android:layout_width="190dp"
             android:layout_height="45dp"
             android:inputType="textPersonName"
-            android:layout_margin="10dp"
-            android:hint="search..."
+            android:hint="Search..."
             android:ems="10"
             android:id="@+id/editText"
-            />
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <Button
-            android:layout_width="70dp"
+            android:layout_width="65dp"
             android:layout_height="45dp"
             android:text="Go"
             android:id="@+id/button2"
             android:layout_gravity="center"
             android:clickable="true"
-            android:onClick="onSearchClicked" />
+            android:onClick="onSearchClicked"
+            android:layout_margin="5dp"
+            android:background="@drawable/coolback"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
@@ -45,10 +61,9 @@
         android:layout_height="match_parent"
         android:id="@+id/scrollView"
         android:layout_above="@+id/linearLayout"
-        android:background="@color/translucent"
+        android:background="@drawable/listback"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_below="@+id/toplayout" >
 
         <LinearLayout
@@ -250,7 +265,25 @@
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout"></LinearLayout>
+        android:id="@+id/linearLayout"
+        android:background="@drawable/listback"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Buy CFL Tickets!"
+            android:id="@+id/button3"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/coolback"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:clickable="true"
+            android:onClick="onBuyTicketClicked" />
+    </LinearLayout>
 
 
 
