@@ -34,7 +34,7 @@ public class SearchActivity extends AppCompatActivity {
         playerDatabase = new PlayerDatabase(this);
         Hashtable<String, Player> playerMap;
         playerMap = playerDatabase.getPlayerNameDatabase();
-        TextView testi = (TextView) findViewById(R.id.testingitno); //PLAYER_NAME is not in
+        //TextView testi = (TextView) findViewById(R.id.testingitno); //PLAYER_NAME is not in
         //do the search stuff here, return a list of players
         String query = "";
         if(whatYouSent != null){
