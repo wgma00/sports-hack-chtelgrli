@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity{
 
         String key = "keyy";
         String stringvalue = "anthony allen";
-        Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
+        Intent sendStuff = new Intent(this, SearchActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
 

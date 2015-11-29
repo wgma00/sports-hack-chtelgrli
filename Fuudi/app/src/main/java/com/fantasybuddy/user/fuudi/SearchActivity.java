@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class SearchActivity extends AppCompatActivity {
-    TextView PLAYER_NAME = (TextView) findViewById(R.id.player_name);
+
     PlayerDatabase playerDatabase;
 
     @Override
@@ -26,24 +26,24 @@ public class SearchActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
 
         playerDatabase = new PlayerDatabase(this);
-        Hashtable<String, Player> playerMap = playerDatabase.getPlayerNameDatabase();
-
+        Hashtable<String, Player> playerMap;
+        playerMap = playerDatabase.getPlayerNameDatabase();
+        TextView TESTING = (TextView) findViewById(R.id.testing); //PLAYER_NAME is not in
         //do the search stuff here, return a list of players
-
+        String query = "";
         if(whatYouSent != null){
-            String query = whatYouSent;
+            query = whatYouSent;
         }
 
-        String query = ""; //REPLACE THIS
         query = query.toLowerCase();
 
         Player result;
 
-
-        if(playerMap.get(query) != null) { //button press or exact name
+        
+        if(playerMap.contains(query)) {
             result = playerMap.get(query);
-            PLAYER_NAME.setText(result.getFirstName()+ " "+ result.getLastName());
 
+            TESTING.setText(result.getFirstName() + " " + result.getLastName());
         }
         else { // returns a list of players with name containing query
             ArrayList<Player> searchResult = searchPlayers(query);

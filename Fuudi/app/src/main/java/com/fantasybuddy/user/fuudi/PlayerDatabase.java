@@ -33,7 +33,6 @@ public class PlayerDatabase {
             Player currentPlayer = playerList.get(i);
             String playerName = currentPlayer.getFirstName() + " " + currentPlayer.getLastName();
             playerName = playerName.toLowerCase();
-
             String playerId = currentPlayer.getId();
 
             playerIdDatabase.put(playerId, currentPlayer);
