@@ -83,15 +83,16 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
             return nameDatabase.get(name.toLowerCase());
         }
 
-        String[] names = name.split(" ");
+        else {
+            String[] names = name.split(" ");
 
-        for(int i = 0; i < playerList.size(); i++){
-            if(playerList.get(i).getFirstName().equals(names[0]) && playerList.get(i).getLastName().equals(names[1])){
-                Log.e("MAP", "not really");
-                return playerList.get(i);
+            for (int i = 0; i < playerList.size(); i++) {
+                if (playerList.get(i).getFirstName().equals(names[0]) && playerList.get(i).getLastName().equals(names[1])) {
+                    Log.e("MAP", "not really");
+                    return playerList.get(i);
+                }
             }
         }
-
         return null;
     }
 

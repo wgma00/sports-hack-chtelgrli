@@ -36,7 +36,7 @@
             android:inputType="textPersonName"
             android:hint="Search..."
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/player_search_bar"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp" />

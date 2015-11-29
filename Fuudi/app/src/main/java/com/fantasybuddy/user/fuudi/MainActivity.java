@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,10 @@ public class MainActivity extends AppCompatActivity{
 
     public void onSearchClicked(View view){
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        EditText searchBar = (EditText) findViewById(R.id.player_search_bar);
+        String searchQuery = searchBar.getText().toString().trim();
+
+        intent.putExtra("SEARCH_QUERY", searchQuery);
         startActivity(intent);
     }
     public void onBuyTicketClicked(View view){
@@ -40,18 +45,11 @@ public class MainActivity extends AppCompatActivity{
         String key = "NAME";
 
         TextView textView = (TextView) ((ViewGroup)view).getChildAt(1);
-        //TextView textView = (TextView)findViewById(R.id.textView);
         CharSequence stringvalue = textView.getText();
         Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
 
-//        String message = "anthony allen";
-//        intent.putExtra("message", message );
-
-//        Toast.makeText(getApplicationContext(), message,
-//                Toast.LENGTH_LONG).show();
-//        startActivity(intent);
     }
 
 }
