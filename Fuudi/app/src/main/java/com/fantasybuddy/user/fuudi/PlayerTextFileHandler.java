@@ -27,7 +27,7 @@ public class PlayerTextFileHandler {
 
         // make sure the file is there
         try {
-            tsvFile = new BufferedReader(new FileReader("cfl_roster-csv.tsv"));
+            tsvFile = new BufferedReader(new FileReader("database_files/cfl_roster-csv.tsv"));
             currentRow = tsvFile.readLine();
         }   catch(Exception e){
             System.out.println("File error 1");
@@ -55,7 +55,6 @@ public class PlayerTextFileHandler {
             playerIds.put(id, currentPlayer);
 
         }
-        System.out.println(playerIds.get("1"));
 
     }
 
@@ -65,7 +64,7 @@ public class PlayerTextFileHandler {
         StringTokenizer st;
 
         try {
-            tsvFile = new BufferedReader(new FileReader("cfl_roster_stats-csv.tsv"));
+            tsvFile = new BufferedReader(new FileReader("database_files/cfl_roster_stats-csv.tsv"));
             currentRow = tsvFile.readLine();
         }   catch(Exception e){System.out.println("File error 3");}
 

@@ -46,4 +46,8 @@ public class PlayerDatabase {
     public Hashtable<String, Player> getPlayerNameDatabase(){
         return playerNameDatabase;
     }
+
+    public ArrayList<Player> getPlayerList() {
+        return playerList;
+    }
 }
