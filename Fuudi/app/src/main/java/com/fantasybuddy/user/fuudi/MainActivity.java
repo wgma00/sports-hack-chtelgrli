@@ -1,6 +1,7 @@
 package com.fantasybuddy.user.fuudi;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity{
         startActivity(intent);
     }
     public void onBuyTicketClicked(View view){
-        Intent intent = new Intent(getApplicationContext(), BuyTicket.class);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.cfl.ca/single_game_tickets"));
         startActivity(intent);
     }
 

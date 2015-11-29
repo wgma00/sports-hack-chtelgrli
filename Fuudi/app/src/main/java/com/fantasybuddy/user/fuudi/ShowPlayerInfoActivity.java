@@ -29,17 +29,19 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         Intent startingIntent = getIntent();
         playerNameExtra = startingIntent.getStringExtra("NAME");
 
+        loadPlayerTrends(playerNameExtra);
+
         Player player = getPlayer(playerNameExtra);
         setInfo(player);
 
-        loadPlayerTrends();
     }
 
-    public void loadPlayerTrends(){
+    public void loadPlayerTrends(String name){
         TextView playerInfo = (TextView) findViewById(R.id.twitter_stuff);
-        TextView playerNameBox = (TextView) findViewById(R.id.player_name);
 
-        String playerName = playerNameExtra;
+        String playerName = name;
+        Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
+
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
         results = new TwitterUpdates().returnTweets(playerName);

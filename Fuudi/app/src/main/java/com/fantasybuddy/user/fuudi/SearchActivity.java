@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +31,7 @@ public class SearchActivity extends AppCompatActivity {
         String whatYouSent = startingIntent.getStringExtra("SEARCH_QUERY");
 
         //makes toast to check if we got the correct name
-        Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
 
 
         playerDatabase = new PlayerDatabase(this);
@@ -53,7 +56,6 @@ public class SearchActivity extends AppCompatActivity {
         else { // returns a list of players with name containing query
             ArrayList<Player> searchResult = searchPlayers(query);
             populateResultList(searchResult);
-            Log.e("PLAYERLIST", searchResult.toString());
         }
 
     }
@@ -70,6 +72,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void populateResultList(ArrayList<Player> results){
         ListView listView = (ListView) findViewById(R.id.search_results);
+
     }
 
     private ArrayList<Player> searchPlayers(String query){
