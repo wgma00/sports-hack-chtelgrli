@@ -5,21 +5,32 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
+    TextView PLAYER_NAME = (TextView) findViewById(R.id.player_name);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        Bundle bundle = getIntent().getExtras();
+        String message = bundle.getString("message");
+
         //do the search stuff here, return a list of players
+
+        if(message != null){
+
+        }
 
         String query = ""; //REPLACE THIS
 
         ArrayList<Player> searchResult = searchPlayers(query); //Example
+
+        
     }
 
     public ArrayList<Player> searchPlayers(String query){

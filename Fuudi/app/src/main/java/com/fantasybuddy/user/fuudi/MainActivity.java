@@ -10,18 +10,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
-    public static List<Player> listOfMyPlayers = new ArrayList<Player>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        listOfMyPlayers.add(new Player("Adit", "Patel"));
-        listOfMyPlayers.add(new Player("Adit1", "Patel"));
-        listOfMyPlayers.add(new Player("Adit2", "Patel"));
-        listOfMyPlayers.add(new Player("Adit3", "Patel"));
-        listOfMyPlayers.add(new Player("Adit4", "Patel"));
-        listOfMyPlayers.add(new Player("Adit5", "Patel"));
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -38,6 +29,8 @@ public class MainActivity extends AppCompatActivity{
 
     public void onPlayerPressed(View view){
         Intent intent = new Intent(getApplicationContext(), ShowPlayerInfoActivity.class);
+        String message = "anthony allen";
+        intent.putExtra("message", message );
         startActivity(intent);
     }
 
