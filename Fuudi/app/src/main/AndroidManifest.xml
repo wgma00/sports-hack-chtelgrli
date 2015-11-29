@@ -41,10 +41,7 @@
             android:name=".ShowPlayerInfoActivity"
             android:label="@string/title_activity_show_player_info" >
         </activity>
-        <activity
-            android:name=".BuyTicket"
-            android:label="@string/title_activity_buy_ticket" >
-        </activity>
+
     </application>
 
 </manifest>
