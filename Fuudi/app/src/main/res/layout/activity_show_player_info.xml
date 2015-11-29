@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.fantasybuddy.user.fuudi.ShowPlayerInfoActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/newbg">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="false"
                         android:layout_margin="10dp"
-                        android:src="@drawable/anthony_allen" />
+                        android:src="@drawable/defaultperson" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -152,9 +152,9 @@
                 >
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_margin="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
                     android:layout_gravity="center"
@@ -168,6 +168,16 @@
                         android:layout_alignParentTop="false"
                         android:layout_margin="10dp"
                         android:src="@drawable/twitter_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Trending on Twitter!"
+                        android:id="@+id/textView10"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center" />
 
 
                 </LinearLayout>

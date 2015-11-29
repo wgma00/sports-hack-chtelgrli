@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity{
 
         String key = "keyy";
         String stringvalue = "anthony allen";
-        Intent sendStuff = new Intent(this, SearchActivity.class);
+        Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
 
