@@ -1,5 +1,6 @@
 package com.fantasybuddy.user.fuudi;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -72,7 +75,6 @@ public class SearchActivity extends AppCompatActivity {
 
     private void populateResultList(ArrayList<Player> results){
         ListView listView = (ListView) findViewById(R.id.search_results);
-
     }
 
     private ArrayList<Player> searchPlayers(String query){
@@ -93,5 +95,6 @@ public class SearchActivity extends AppCompatActivity {
         return result;
     }
 
-
 }
+
+

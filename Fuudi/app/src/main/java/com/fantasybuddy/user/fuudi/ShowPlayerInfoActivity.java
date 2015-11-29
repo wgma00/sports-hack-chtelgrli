@@ -43,7 +43,7 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView playerInfo = (TextView) findViewById(R.id.twitter_stuff);
 
         String playerName = name;
-        Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
 
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
@@ -70,6 +70,7 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView weightText = (TextView) findViewById(R.id.weight_holder);
         TextView heightText = (TextView) findViewById(R.id.height_holder);
         CircleImageView playerImage = (CircleImageView)findViewById(R.id.player_image);
+
 
         String nameForResource = playerNameExtra.toLowerCase().replace(' ', '_');
 
