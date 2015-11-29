@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,9 +37,12 @@ public class MainActivity extends AppCompatActivity{
     public void onPlayerPressed(View view){
 //        Intent intent = new Intent(getApplicationContext(), ShowPlayerInfoActivity.class);
 
-        String key = "keyy";
-        String stringvalue = "anthony allen";
-        Intent sendStuff = new Intent(this, SearchActivity.class);
+        String key = "NAME";
+
+        TextView textView = (TextView) ((ViewGroup)view).getChildAt(1);
+        //TextView textView = (TextView)findViewById(R.id.textView);
+        CharSequence stringvalue = textView.getText();
+        Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
 
