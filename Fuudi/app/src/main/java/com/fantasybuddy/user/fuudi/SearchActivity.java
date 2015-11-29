@@ -18,7 +18,7 @@ public class SearchActivity extends AppCompatActivity {
 
         String query = ""; //REPLACE THIS
 
-        searchPlayers(query);
+        ArrayList<Player> searchResult = searchPlayers(query);
     }
 
     private ArrayList<Player> searchPlayers(String query){
