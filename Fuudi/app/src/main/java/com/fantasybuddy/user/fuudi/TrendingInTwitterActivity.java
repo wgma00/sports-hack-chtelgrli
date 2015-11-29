@@ -27,6 +27,7 @@ public class TrendingInTwitterActivity extends AppCompatActivity {
     public void loadPlayerTrends(View view){
         TextView playerInfo = (TextView) findViewById(R.id.playerTweets);
         EditText playerNameBox = (EditText) findViewById(R.id.playerNameBox);
+
         String playerName = playerNameBox.getText().toString();
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
