@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +28,10 @@ public class MainActivity extends AppCompatActivity{
 
     public void onSearchClicked(View view){
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        EditText searchBar = (EditText) findViewById(R.id.player_search_bar);
+        String searchQuery = searchBar.getText().toString().trim();
+
+        intent.putExtra("SEARCH_QUERY", searchQuery);
         startActivity(intent);
     }
     public void onBuyTicketClicked(View view){
@@ -35,18 +42,20 @@ public class MainActivity extends AppCompatActivity{
     public void onPlayerPressed(View view){
 //        Intent intent = new Intent(getApplicationContext(), ShowPlayerInfoActivity.class);
 
-        String key = "keyy";
-        String stringvalue = "anthony allen";
+//        String key = "keyy";
+//        String stringvalue = "anthony allen";
+        String key = "NAME";
+
+        TextView textView = (TextView) ((ViewGroup)view).getChildAt(1);
+
+        CharSequence stringvalue = textView.getText();
+        Toast.makeText(getApplicationContext(), stringvalue,
+                Toast.LENGTH_LONG).show();
+
         Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
 
-//        String message = "anthony allen";
-//        intent.putExtra("message", message );
-
-//        Toast.makeText(getApplicationContext(), message,
-//                Toast.LENGTH_LONG).show();
-//        startActivity(intent);
     }
 
 }

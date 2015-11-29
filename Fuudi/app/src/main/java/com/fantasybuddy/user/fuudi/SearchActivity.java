@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ public class SearchActivity extends AppCompatActivity {
 
         //gets player'clicked on's name through intent
         Intent startingIntent = getIntent();
-        String whatYouSent = startingIntent.getStringExtra("keyy");
+        String whatYouSent = startingIntent.getStringExtra("SEARCH_QUERY");
 
         //makes toast to check if we got the correct name
         Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
@@ -33,7 +34,7 @@ public class SearchActivity extends AppCompatActivity {
         playerDatabase = new PlayerDatabase(this);
         Hashtable<String, Player> playerMap;
         playerMap = playerDatabase.getPlayerNameDatabase();
-        TextView testi = (TextView) findViewById(R.id.testingitno); //PLAYER_NAME is not in
+        //TextView testi = (TextView) findViewById(R.id.testingitno); //PLAYER_NAME is not in
         //do the search stuff here, return a list of players
         String query = "";
         if(whatYouSent != null){
@@ -43,21 +44,35 @@ public class SearchActivity extends AppCompatActivity {
         query = query.toLowerCase();
 
         Player result;
-
         
-        if(playerMap.contains(query)) {
+        if(playerMap.containsKey(query)) {
             result = playerMap.get(query);
-
-            testi.setText(result.getFirstName() + " " + result.getLastName());
+            String playerName = result.getFirstName() + " " + result.getLastName();
+            sendToPlayerInfo(playerName);
         }
         else { // returns a list of players with name containing query
             ArrayList<Player> searchResult = searchPlayers(query);
+            populateResultList(searchResult);
+            Log.e("PLAYERLIST", searchResult.toString());
         }
 
     }
 
+    private void sendToPlayerInfo(String result){
+        String key = "NAME";
+        String stringvalue = result;
 
-    public ArrayList<Player> searchPlayers(String query){
+        Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
+        sendStuff.putExtra(key, stringvalue);
+        startActivity(sendStuff);
+
+    }
+
+    private void populateResultList(ArrayList<Player> results){
+        ListView listView = (ListView) findViewById(R.id.search_results);
+    }
+
+    private ArrayList<Player> searchPlayers(String query){
         ArrayList<Player> result = new ArrayList<Player>();
         ArrayList<Player> totalList = playerDatabase.getPlayerList(); //List of all players
 

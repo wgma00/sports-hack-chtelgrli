@@ -40,7 +40,7 @@ public class PlayerTextFileHandler {
 
         // parse through the file
         while(currentRow != null){ //loops through rows
-            st = new StringTokenizer(currentRow, "\t");
+            st = new StringTokenizer(currentRow);
             ArrayList<String> playerData = new ArrayList<String>();
 
             while(st.hasMoreElements()) { //adds each column
@@ -74,7 +74,7 @@ public class PlayerTextFileHandler {
         }   catch(Exception e){System.out.println("File error 3");}
 
         while(currentRow != null){
-            st = new StringTokenizer(currentRow, "\t");
+            st = new StringTokenizer(currentRow);
             ArrayList<String> currentData = new ArrayList<String>(); //list of current data on row
 
             while(st.hasMoreElements()){

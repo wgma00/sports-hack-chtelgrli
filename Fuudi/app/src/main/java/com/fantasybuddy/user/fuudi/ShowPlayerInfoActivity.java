@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,10 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class ShowPlayerInfoActivity extends AppCompatActivity {
 
-    String whatYouSent;
+    String playerNameExtra;
     ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     @Override
@@ -25,21 +27,24 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
 
 
         Intent startingIntent = getIntent();
-        whatYouSent = startingIntent.getStringExtra("keyy");
-        Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
+        playerNameExtra = startingIntent.getStringExtra("NAME");
+
+        Player player = getPlayer(playerNameExtra);
+        setInfo(player);
 
         loadPlayerTrends();
     }
 
     public void loadPlayerTrends(){
         TextView playerInfo = (TextView) findViewById(R.id.twitter_stuff);
-        EditText playerNameBox = (EditText) findViewById(R.id.playerNameBox);
+        TextView playerNameBox = (TextView) findViewById(R.id.player_name);
 
-        String playerName = whatYouSent;
+        String playerName = playerNameExtra;
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
         results = new TwitterUpdates().returnTweets(playerName);
         StrictMode.enableDefaults();
+
         for(int i = 0; i < results.size(); i++){
             String result = results.get(i);
             String handle = result.substring(0, result.indexOf(":")+1);
@@ -50,6 +55,45 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
             Tweet tweetRN = tweets.get(i);
             playerInfo.setText(playerInfo.getText() + "\n" + tweetRN.handle + "\r" + tweetRN.message + "\n");
         }
+    }
+
+    private void setInfo(Player player){
+        TextView playerNameBox = (TextView) findViewById(R.id.player_name);
+        TextView teamText = (TextView) findViewById(R.id.team_number_holder);
+        TextView positionText = (TextView) findViewById(R.id.position_holder);
+        TextView weightText = (TextView) findViewById(R.id.weight_holder);
+        TextView heightText = (TextView) findViewById(R.id.height_holder);
+
+        playerNameBox.setText(playerNameExtra);
+        teamText.setText(player.getTeamId());
+        positionText.setText(player.getPosition());
+        weightText.setText(player.getWeight());
+        heightText.setText(player.getHeight());
+
+    }
+
+    private Player getPlayer(String name){
+        PlayerDatabase playerDatabase = new PlayerDatabase(this);
+        ArrayList<Player> playerList = playerDatabase.getPlayerList();
+        Hashtable<String, Player> nameDatabase;
+        nameDatabase = playerDatabase.getPlayerNameDatabase();
+
+        if(nameDatabase.containsKey(name.toLowerCase())){
+            Log.e("MAP", "It worked");
+            return nameDatabase.get(name.toLowerCase());
+        }
+
+        else {
+            String[] names = name.split(" ");
+
+            for (int i = 0; i < playerList.size(); i++) {
+                if (playerList.get(i).getFirstName().equals(names[0]) && playerList.get(i).getLastName().equals(names[1])) {
+                    Log.e("MAP", "not really");
+                    return playerList.get(i);
+                }
+            }
+        }
+        return null;
     }
 
     public class Tweet{
