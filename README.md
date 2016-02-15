@@ -9,3 +9,4 @@ information about the players.
 
 Sample photos
 ===============
+![alt tag](https://raw.githubusercontent.com/wgma00/sports-hack-fuudi/master/readme/layout.jpg)
