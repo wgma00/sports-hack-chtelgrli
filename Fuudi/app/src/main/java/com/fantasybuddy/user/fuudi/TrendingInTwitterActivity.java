@@ -41,7 +41,8 @@ public class TrendingInTwitterActivity extends AppCompatActivity {
         }
         for(int i = 0; i < tweets.size(); i++){
             Tweet tweetRN = tweets.get(i);
-            playerInfo.setText(playerInfo.getText() + "\n" + tweetRN.handle + "\r" + tweetRN.message + "\n");
+            playerInfo.setText(playerInfo.getText() + "\n" +
+			       tweetRN.handle + "\r" + tweetRN.message + "\n");
         }
     }
 
@@ -54,8 +55,7 @@ public class TrendingInTwitterActivity extends AppCompatActivity {
         }
     }
 
-    public void enableStrictMode()
-    {
+    public void enableStrictMode(){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }

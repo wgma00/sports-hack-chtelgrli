@@ -30,35 +30,23 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_player_info);
-
         Button addplayerbutt = (Button) findViewById(R.id.addplayerbutton);
-
-
         Intent startingIntent = getIntent();
         playerNameExtra = startingIntent.getStringExtra("NAME");
-
         loadPlayerTrends(playerNameExtra);
-
         Player player = getPlayer(playerNameExtra);
         setInfo(player);
-
-        for(int i = 0; i<MainActivity.listOfMyPlayers.size(); i++){
+	for(int i = 0; i<MainActivity.listOfMyPlayers.size(); i++){
             if(MainActivity.listOfMyPlayers.contains(playerNameExtra) == false){
                 addplayerbutt.setVisibility(View.VISIBLE);
             }
-
         }
-
-
-
     }
 
     public void loadPlayerTrends(String name){
         TextView playerInfo = (TextView) findViewById(R.id.twitter_stuff);
-
         String playerName = name;
         //Toast.makeText(getApplicationContext(), playerName, Toast.LENGTH_SHORT).show();
-
         ArrayList<String> results = new ArrayList<String>();
         enableStrictMode();
 
@@ -73,7 +61,8 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         }
         for(int i = 0; i < tweets.size(); i++){
             Tweet tweetRN = tweets.get(i);
-            playerInfo.setText(playerInfo.getText() + "\n" + tweetRN.handle + "\r" + tweetRN.message + "\n");
+            playerInfo.setText(playerInfo.getText() + "\n" +
+			       tweetRN.handle + "\r" + tweetRN.message + "\n");
         }
     }
 
@@ -84,20 +73,15 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         TextView weightText = (TextView) findViewById(R.id.weight_holder);
         TextView heightText = (TextView) findViewById(R.id.height_holder);
         CircleImageView playerImage = (CircleImageView)findViewById(R.id.player_image);
-
-
         String nameForResource = playerNameExtra.toLowerCase().replace(' ', '_');
-
-        int resourceId = getResources().getIdentifier(nameForResource, "drawable", getPackageName());
-
+        int resourceId = getResources().getIdentifier(
+			 nameForResource, "drawable", getPackageName());
         playerImage.setImageResource(resourceId);
-
         playerNameBox.setText(playerNameExtra);
         teamText.setText(player.getTeamId());
         positionText.setText(player.getPosition());
         weightText.setText(player.getWeight());
         heightText.setText(player.getHeight());
-
     }
 
     private Player getPlayer(String name){
@@ -105,17 +89,15 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         ArrayList<Player> playerList = playerDatabase.getPlayerList();
         Hashtable<String, Player> nameDatabase;
         nameDatabase = playerDatabase.getPlayerNameDatabase();
-
         if(nameDatabase.containsKey(name.toLowerCase())){
             Log.e("MAP", "It worked");
             return nameDatabase.get(name.toLowerCase());
         }
-
         else {
             String[] names = name.split(" ");
-
             for (int i = 0; i < playerList.size(); i++) {
-                if (playerList.get(i).getFirstName().equals(names[0]) && playerList.get(i).getLastName().equals(names[1])) {
+                if (playerList.get(i).getFirstName().equals(names[0]) 
+		   && playerList.get(i).getLastName().equals(names[1])) {
                     Log.e("MAP", "not really");
                     return playerList.get(i);
                 }
@@ -133,21 +115,17 @@ public class ShowPlayerInfoActivity extends AppCompatActivity {
         }
     }
 
-    public void enableStrictMode()
-    {
+    public void enableStrictMode(){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }
 
     public void onAddPlayerClicked(View view){
-
         String key = "NAME";
-
         CharSequence stringvalue = playerNameExtra;
         Intent sendStuff = new Intent(this, MainActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
-
     }
 
 }

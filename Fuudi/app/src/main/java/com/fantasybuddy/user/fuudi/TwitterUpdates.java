@@ -31,7 +31,8 @@ public class TwitterUpdates {
 			Query query = new Query(name);
 		    QueryResult result = twitter.search(query);
 		    for (Status status : result.getTweets()) {
-		    	tweets.add("@" + status.getUser().getScreenName() + ": \n" + status.getText());
+		    	tweets.add("@" + status.getUser().getScreenName() 
+				       + ": \n" + status.getText());
 		    }
 		}
 		catch (TwitterException te) {

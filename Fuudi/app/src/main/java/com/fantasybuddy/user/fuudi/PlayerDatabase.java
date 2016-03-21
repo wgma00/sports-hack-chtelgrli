@@ -21,20 +21,20 @@ public class PlayerDatabase {
         this.context = context;
         playerIdDatabase = new Hashtable<String, Player>();
         playerNameDatabase = new Hashtable<String, Player>();
-
         updateDatabases();
     }
-
+    
+    /**
+     * merge the raw data into the database
+     */
     private void updateDatabases(){
         PlayerTextFileHandler textHandler = new PlayerTextFileHandler(context);
         playerList = textHandler.getPlayers();
-
         for(int i = 0; i < playerList.size(); i++){
             Player currentPlayer = playerList.get(i);
-            String playerName = currentPlayer.getFirstName() + " " + currentPlayer.getLastName();
-
+            String playerName = currentPlayer.getFirstName() + " " +
+		                currentPlayer.getLastName();
             String playerId = currentPlayer.getId();
-
             playerIdDatabase.put(playerId, currentPlayer);
             playerNameDatabase.put(playerName.toLowerCase(), currentPlayer);
         }

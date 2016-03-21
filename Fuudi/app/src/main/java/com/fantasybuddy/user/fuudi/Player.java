@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class Player {
 
-
     // inderminate values, meaning nothing was added
     private final String STRING_INDETERMINATE = "";
 
@@ -95,7 +94,6 @@ public class Player {
         this.setBirthDate(STRING_INDETERMINATE);
         this.setBirthPlace(STRING_INDETERMINATE);
         this.setCollege(STRING_INDETERMINATE);
-
         this.setYrsTeam(STRING_INDETERMINATE);
         this.setYrsLeague(STRING_INDETERMINATE);
         this.setRosStatus(STRING_INDETERMINATE);

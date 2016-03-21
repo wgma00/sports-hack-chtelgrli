@@ -16,27 +16,32 @@ public class GameTextFileHandler {
         updateDatabase();
     }
 
+    /**
+     * Read and process the information from the games file
+     */
     private void updateDatabase(){
         BufferedReader tsvFile = null;
         String currentrow = "";
         StringTokenizer st;
-
         try{
-            tsvFile = new BufferedReader(new FileReader("database_files/cfl_games-csv.tsv"));
-        } catch(Exception e){System.out.println("File Error");}
+            tsvFile = new BufferedReader(
+		      new FileReader("database_files/cfl_games-csv.tsv"));
+        } catch(Exception e){
+		System.out.println("File Error");
+	}
 
         while (currentrow != null){
+	    // use regex to parse the input by tabs
             st = new StringTokenizer(currentrow, "\t");
             ArrayList<Object> datarow = new ArrayList<Object>();
-
             while(st.hasMoreElements()){
                 datarow.add(st.nextElement());
             }
-
             try{
                 currentrow = tsvFile.readLine();
-            }catch(Exception e){System.out.println("File Error");}
-
+            }catch(Exception e){
+		System.out.println("File Error");
+	    }
             Game currentGame = new Game(datarow);
             gamesList.add(currentGame);
         }

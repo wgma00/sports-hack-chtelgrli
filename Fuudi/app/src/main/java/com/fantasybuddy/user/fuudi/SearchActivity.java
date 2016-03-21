@@ -27,50 +27,41 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-
         //gets player'clicked on's name through intent
         Intent startingIntent = getIntent();
         String whatYouSent = startingIntent.getStringExtra("SEARCH_QUERY");
-
         //makes toast to check if we got the correct name
         //Toast.makeText(getApplicationContext(), whatYouSent, Toast.LENGTH_LONG).show();
-
-
         playerDatabase = new PlayerDatabase(this);
         Hashtable<String, Player> playerMap;
         playerMap = playerDatabase.getPlayerNameDatabase();
-        //TextView testi = (TextView) findViewById(R.id.testingitno); //PLAYER_NAME is not in
+	//PLAYER_NAME is not in
+        //TextView testi = (TextView) findViewById(R.id.testingitno); 
         //do the search stuff here, return a list of players
         String query = "";
         if(whatYouSent != null){
             query = whatYouSent;
         }
-
         query = query.toLowerCase();
-
         Player result;
-        
         if(playerMap.containsKey(query)) {
             result = playerMap.get(query);
             String playerName = result.getFirstName() + " " + result.getLastName();
             sendToPlayerInfo(playerName);
         }
-        else { // returns a list of players with name containing query
+        else { 
+	    // returns a list of players with name containing query
             ArrayList<Player> searchResult = searchPlayers(query);
             populateResultList(searchResult);
         }
-
     }
 
     private void sendToPlayerInfo(String result){
         String key = "NAME";
         String stringvalue = result;
-
         Intent sendStuff = new Intent(this, ShowPlayerInfoActivity.class);
         sendStuff.putExtra(key, stringvalue);
         startActivity(sendStuff);
-
     }
 
     private void populateResultList(ArrayList<Player> results){
@@ -83,18 +74,15 @@ public class SearchActivity extends AppCompatActivity {
 
         for(int i = 0; i < totalList.size(); i++){
             Player currentPlayer = totalList.get(i);
-            String name = currentPlayer.getFirstName() + " " + currentPlayer.getLastName();
-
+            String name = currentPlayer.getFirstName() + " " + 
+		          currentPlayer.getLastName();
             name = name.toLowerCase();
-
             if(name.contains(query)){
                 result.add(totalList.get(i));
             }
         }
-
         return result;
     }
-
 }
 
 

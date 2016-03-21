@@ -50,15 +50,15 @@ public class Game {
     private boolean soldOut;
     private boolean isVisible;
     private String culture;
+    
+    // constructors
+    public Game(){}
 
-    public Game(){
-
-    }
     public Game(ArrayList data){
         this.setGameId((Integer)data.get(0));
     }
-
-
+    
+    // getters and setters
     public int getINT_INDETERMINANT() {
         return INT_INDETERMINANT;
     }
